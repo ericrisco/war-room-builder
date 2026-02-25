@@ -1,9 +1,0 @@
-{
-  "name": "brand-war-room",
-  "topic": "brand strategy and positioning for B2B SaaS startups",
-  "mode": "persistent",
-  "created": "2026-02-25",
-  "experts": ["expert-1.md", "expert-2.md", "expert-3.md"],
-  "max_rounds": 10,
-  "language": "en"
-}
