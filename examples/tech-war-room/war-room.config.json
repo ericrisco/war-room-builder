@@ -1,0 +1,9 @@
+{
+  "name": "tech-war-room",
+  "topic": "software architecture for high-traffic applications",
+  "mode": "persistent",
+  "created": "2026-02-25",
+  "experts": ["expert-1.md", "expert-2.md", "expert-3.md"],
+  "max_rounds": 10,
+  "language": "en"
+}

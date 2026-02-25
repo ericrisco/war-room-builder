@@ -1,0 +1,34 @@
+name: Package Skill
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create .skill package
+        run: |
+          mkdir -p dist
+          tar -czf dist/custom-war-room.skill \
+            SKILL.md \
+            references/profile-template.md \
+            examples/ \
+            LICENSE \
+            README.md
+
+      - name: Upload skill artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: custom-war-room-skill
+          path: dist/custom-war-room.skill
+
+      - name: Attach to release
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/custom-war-room.skill
